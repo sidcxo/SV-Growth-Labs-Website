@@ -1,0 +1,408 @@
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SV Growth Labs - Pay Per Call Pipeline System</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; }
+.font-serif { font-family: 'Instrument Serif', serif; }
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes infinite-scroll {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+.animate-fade-up {
+animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+opacity: 0;
+}
+.animate-infinite-scroll {
+animation: infinite-scroll 40s linear infinite;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.glass {
+background: rgba(10, 10, 10, 0.7);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.marquee-mask {
+mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+[style*="--border-gradient"]::before {
+content: "";
+position: absolute;
+inset: 0;
+padding: 1px;
+border-radius: var(--border-radius-before, inherit);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+background: var(--border-gradient);
+pointer-events: none;
+}
+</style>
+</head>
+  <body class="antialiased selection:bg-rose-500/30 selection:text-rose-200 bg-[#050505] text-gray-400">
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 md:pt-6 md:px-6 pointer-events-none">
+      <nav class="glass flex md:gap-10 transition-all duration-300 w-full max-w-5xl pointer-events-auto rounded-full pt-2 pr-2 pb-2 pl-5 shadow-2xl gap-x-4 gap-y-4 items-center justify-between shadow-black/50">
+        <a href="#" class="group flex items-center gap-2 shrink-0">
+          <span class="md:text-2xl group-hover:text-rose-500 transition-colors text-xl font-medium italic text-white tracking-tight font-serif">
+            SV Growth Labs
+          </span>
+        </a>
+        <a href="#book-call" class="text-xs px-4 py-2 md:px-5 md:py-2.5 rounded-full transition-all duration-300 flex items-center gap-2 font-montserrat font-medium group shadow-md hover:shadow-lg hover:shadow-rose-500/20 shrink-0 bg-white text-black hover:bg-rose-600 hover:text-white">
+          Get Started
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-3 h-3 transition-transform group-hover:translate-x-0.5 hidden sm:block">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <main class="md:pt-32 md:px-6 max-w-7xl mr-auto ml-auto pt-28 pr-4 pb-24 pl-4">
+      <!-- Hero Section -->
+      <section class="md:rounded-[2.5rem] md:p-12 lg:p-20 overflow-hidden md:mb-16 text-center bg-[#0A0A0A] border rounded-[2rem] mb-12 pt-12 pr-6 pb-12 pl-6 relative shadow-2xl shadow-black/20 border-white/5">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:3rem_3rem] md:bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-30"></div>
+        <div class="flex flex-col max-w-5xl z-10 mr-auto ml-auto relative items-center">
+          <div class="animate-fade-up text-[10px] uppercase md:mb-8 font-semibold tracking-widest font-montserrat w-fit border rounded-full mb-6 pt-1 pr-3 pb-1 pl-3 text-rose-400 bg-rose-950/30 border-rose-900/50">
+            Attention High-Ticket Business Owners
+          </div>
+          <h1 class="animate-fade-up delay-100 sm:text-5xl md:text-7xl lg:text-[5rem] leading-[1.1] md:leading-[0.95] md:mb-8 text-4xl font-medium text-white tracking-tighter font-serif mb-6">
+            We guarantee 10-20 sales calls in 60 days on a pay per call basis
+          </h1>
+          <p class="animate-fade-up delay-200 md:text-xl leading-relaxed md:mb-12 text-base font-light text-gray-400 max-w-2xl mb-8 pr-2 pl-2">
+            Our Pay Per Pipeline System books consistent calls on your calendar
+            without you lifting a finger.
+          </p>
+          <div class="animate-fade-up delay-300 aspect-video md:rounded-[2rem] md:border-4 overflow-hidden md:mb-12 group bg-black w-full max-w-4xl border-white/10 border-2 rounded-xl ring-white/5 ring-1 mb-8 relative shadow-2xl">
+            <iframe src="https://www.loom.com/embed/5587522613d54c4a81c778c251a732bd" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" class="absolute top-0 left-0 w-full h-full"></iframe>
+          </div>
+          <div class="animate-fade-up delay-500 flex flex-col sm:flex-row gap-3 md:gap-4 items-center justify-center w-full mb-6">
+            <a href="#book-call" class="sm:w-auto md:py-4 hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-300 flex items-center justify-center gap-2 group hover:bg-rose-600 hover:text-white text-sm font-medium text-black font-montserrat bg-white w-full rounded-full pt-3.5 pr-8 pb-3.5 pl-8">
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 transition-transform group-hover:translate-x-1">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+            <a href="#process" class="sm:w-auto md:py-4 transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium font-montserrat bg-transparent w-full border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 hover:border-white/30 hover:bg-white/5 text-white border-white/10">
+              Learn More
+            </a>
+          </div>
+          <p class="animate-fade-up delay-500 text-[10px] md:text-xs font-montserrat text-gray-500">
+            Book a Free Strategy Session. No credit card required.
+          </p>
+        </div>
+      </section>
+
+      <!-- Pain Points Section -->
+      <section class="md:py-20 max-w-6xl mr-auto ml-auto pt-12 pb-12">
+        <h2 class="text-3xl md:text-5xl text-center mb-10 md:mb-16 tracking-tight font-serif font-medium px-4 text-white">
+          Are You Currently Struggling With...
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div class="md:p-8 md:rounded-3xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-[#121212] to-[#0a0a0a] rounded-[1.5rem] pt-6 pr-6 pb-6 pl-6 shadow-lg hover:shadow-rose-900/10 shadow-black" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(244,63,94,0.3), rgba(244,63,94,0.05)); --border-radius-before: 1.5rem">
+            <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-down w-5 h-5 md:w-6 md:h-6">
+                <path d="M16 17h6v-6"></path>
+                <path d="m22 17-8.5-8.5-5 5L2 7"></path>
+              </svg>
+            </div>
+            <h3 class="md:text-xl md:mb-3 text-lg font-semibold font-montserrat mb-2 text-white">Unpredictable Pipeline</h3>
+            <p class="leading-relaxed text-sm font-light text-gray-400">You never know where your next client is coming from, creating revenue rollercoasters that stall growth.</p>
+          </div>
+          <div class="md:p-8 md:rounded-3xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-[#121212] to-[#0a0a0a] rounded-[1.5rem] pt-6 pr-6 pb-6 pl-6 shadow-lg hover:shadow-rose-900/10 shadow-black" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(244,63,94,0.3), rgba(244,63,94,0.05)); --border-radius-before: 1.5rem">
+            <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-5 h-5 md:w-6 md:h-6">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h3 class="md:text-xl md:mb-3 text-lg font-semibold font-montserrat mb-2 text-white">Paying for "Leads," Not Results</h3>
+            <p class="leading-relaxed text-sm font-light text-gray-400">You've paid agencies retainers for "leads" you still have to chase, qualify, and book yourself.</p>
+          </div>
+          <div class="md:p-8 md:rounded-3xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-[#121212] to-[#0a0a0a] rounded-[1.5rem] pt-6 pr-6 pb-6 pl-6 shadow-lg hover:shadow-rose-900/10 shadow-black" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(244,63,94,0.3), rgba(244,63,94,0.05)); --border-radius-before: 1.5rem">
+            <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-5 h-5 md:w-6 md:h-6">
+                <path d="M12 6v6l4 2"></path>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            </div>
+            <h3 class="md:text-xl md:mb-3 text-lg font-semibold font-montserrat mb-2 text-white">No Time to Prospect</h3>
+            <p class="leading-relaxed text-sm font-light text-gray-400">You're too busy closing deals and serving clients to build and run outbound systems yourself.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits / Why Us -->
+      <section class="md:py-20 pt-12 pb-12">
+        <div class="md:mb-16 text-center mb-10 pr-4 pl-4">
+          <h2 class="md:text-5xl text-3xl font-medium tracking-tight font-serif mb-4 text-white">Why Choose Velocity Growth</h2>
+          <p class="md:text-base text-sm font-light max-w-2xl mr-auto ml-auto text-gray-400">We use a unique Pay Per Pipeline model that others simply can't replicate.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
+          <div class="group md:rounded-3xl md:p-8 overflow-hidden md:h-80 flex flex-col transition-all hover:border-rose-500/30 bg-gradient-to-br from-[#0f0f0f] to-[#050505] h-64 border rounded-[1.5rem] pt-6 pr-6 pb-6 pl-6 relative border-white/5">
+            <h3 class="md:text-2xl md:mb-4 text-xl font-medium font-montserrat mb-3 text-white">Done-For-You Outbound</h3>
+            <p class="leading-relaxed z-10 text-sm font-light relative text-gray-400">We handle everything, from infrastructure setup to booking the call. You just show up to booked calls ready to close.</p>
+            <div class="mt-auto self-end group-hover:text-rose-500 transition-colors duration-500 transform group-hover:scale-110 text-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair w-16 h-16 md:w-24 md:h-24 stroke-[1px]">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="22" x2="18" y1="12" y2="12"></line>
+                <line x1="6" x2="2" y1="12" y2="12"></line>
+                <line x1="12" x2="12" y1="6" y2="2"></line>
+                <line x1="12" x2="12" y1="22" y2="18"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="group md:rounded-3xl md:p-8 overflow-hidden md:h-80 flex flex-col transition-all hover:border-rose-500/30 bg-gradient-to-br from-[#0f0f0f] to-[#050505] h-64 border rounded-[1.5rem] pt-6 pr-6 pb-6 pl-6 relative border-white/5">
+            <h3 class="md:text-2xl md:mb-4 text-xl font-medium font-montserrat mb-3 text-white">Full Transparency</h3>
+            <p class="leading-relaxed z-10 text-sm font-light relative text-gray-400">See exactly who we're reaching, what's working, and which calls are booked. No black-box reporting or vanity metrics.</p>
+            <div class="mt-auto self-end group-hover:text-rose-500 transition-colors duration-500 transform group-hover:scale-110 text-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor w-16 h-16 md:w-24 md:h-24 stroke-[1px]">
+                <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                <line x1="8" x2="16" y1="21" y2="21"></line>
+                <line x1="12" x2="12" y1="17" y2="21"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="group md:rounded-3xl md:p-8 overflow-hidden md:h-80 flex flex-col transition-all hover:border-rose-500/30 bg-gradient-to-br from-[#0f0f0f] to-[#050505] h-64 border rounded-[1.5rem] pt-6 pr-6 pb-6 pl-6 relative border-white/5">
+            <h3 class="md:text-2xl md:mb-4 text-xl font-medium font-montserrat mb-3 text-white">Zero Risk, Pay Per Call</h3>
+            <p class="leading-relaxed z-10 text-sm font-light relative text-gray-400">No retainers. No setup fees. You only pay when a qualified prospect shows up on your calendar. If they no-show, you don't pay.</p>
+            <div class="mt-auto self-end group-hover:text-rose-500 transition-colors duration-500 transform group-hover:scale-110 text-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-16 h-16 md:w-24 md:h-24 stroke-[1px]">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <a href="#book-call" class="w-full sm:w-auto justify-center px-8 py-3.5 rounded-full text-sm transition-all duration-300 font-montserrat font-medium flex items-center gap-2 bg-white text-black hover:bg-rose-600 hover:text-white">
+            Book a Call
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4">
+              <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Transformation / Process -->
+      <section class="md:py-24 pt-16 pb-16" id="process">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-[10px] md:text-xs font-montserrat font-bold tracking-widest uppercase mb-3 block text-rose-500">Transformation</span>
+          <h2 class="md:text-5xl text-3xl font-medium font-serif text-white">Get Consistent Results</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10 md:gap-8 relative max-w-6xl mx-auto">
+          <div class="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent to-transparent -z-10 via-white/10"></div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 md:w-24 md:h-24 border rounded-full flex items-center justify-center text-xl md:text-2xl font-serif mb-5 md:mb-6 shadow-sm group-hover:border-rose-500 group-hover:text-rose-500 transition-colors bg-[#0a0a0a] border-white/10 text-gray-600">1</div>
+            <h3 class="text-lg md:text-xl font-bold font-montserrat mb-2 md:mb-3 text-white">Book a Call</h3>
+            <p class="leading-relaxed md:px-0 text-sm font-light max-w-xs pr-4 pl-4 text-gray-400">We analyze your current situation and determine if our system is a fit for your specific growth goals.</p>
+          </div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 md:w-24 md:h-24 border rounded-full flex items-center justify-center text-xl md:text-2xl font-serif mb-5 md:mb-6 shadow-sm group-hover:border-rose-500 group-hover:text-rose-500 transition-colors bg-[#0a0a0a] border-white/10 text-gray-600">2</div>
+            <h3 class="text-lg md:text-xl font-bold font-montserrat mb-2 md:mb-3 text-white">We Build The Engine</h3>
+            <p class="leading-relaxed md:px-0 text-sm font-light max-w-xs pr-4 pl-4 text-gray-400">We set up everything and launch campaigns while you focus on what you do best.</p>
+          </div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 md:w-24 md:h-24 border rounded-full flex items-center justify-center text-xl md:text-2xl font-serif mb-5 md:mb-6 shadow-sm group-hover:border-rose-500 group-hover:text-rose-500 transition-colors bg-[#0a0a0a] border-white/10 text-gray-600">3</div>
+            <h3 class="text-lg md:text-xl font-bold font-montserrat mb-2 md:mb-3 text-white">You Get Scale</h3>
+            <p class="leading-relaxed md:px-0 text-sm font-light max-w-xs pr-4 pl-4 text-gray-400">Booked calls flow in. You focus on closing while we keep the pipeline full.</p>
+          </div>
+        </div>
+        <div class="flex justify-center mt-12 md:mt-16">
+          <a href="#book-call" class="w-full sm:w-auto justify-center px-10 py-4 rounded-full text-sm transition-all duration-300 font-montserrat font-medium flex items-center gap-2 shadow-lg hover:shadow-rose-500/20 shadow-black/50 bg-white text-black hover:bg-rose-600 hover:text-white">
+            Book Your Transformation
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Video Deep Dive -->
+      <section class="mb-16 md:mb-24 px-0 md:px-6"></section>
+
+      <!-- Offer / What's Included -->
+      <section class="md:py-20 -mx-4 md:-mx-6 md:px-6 md:rounded-[3rem] border-y bg-[#0a0a0a] border-white/5 rounded-[2.5rem] pt-16 pr-4 pb-16 pl-4">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl md:text-5xl text-center mb-10 md:mb-16 tracking-tight font-serif font-medium text-white">What's Included</h2>
+          <div class="rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-16 border shadow-2xl relative overflow-hidden bg-[#111] shadow-black border-white/5">
+            <div class="absolute top-0 right-0 w-[20rem] h-[20rem] md:w-[40rem] md:h-[40rem] bg-gradient-to-b to-transparent rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none from-rose-900/10"></div>
+            <div class="flex flex-col z-10 relative items-center">
+              <div class="text-center mb-8 md:mb-12 max-w-3xl">
+                <span class="font-bold tracking-widest uppercase text-[10px] md:text-xs font-montserrat mb-4 block text-rose-500">The Ecosystem</span>
+                <h3 class="text-2xl md:text-4xl font-serif mb-4 md:mb-6 text-white">All-In-One Growth Infrastructure</h3>
+                <p class="font-light text-base md:text-lg text-gray-400">We've consolidated our entire suite of growth tools into one powerful partnership designed for maximum impact.</p>
+              </div>
+              <div class="grid md:grid-cols-2 gap-y-4 gap-x-20 md:gap-y-6 w-full max-w-4xl mb-12 md:mb-16">
+                <ul class="space-y-4 md:space-y-6">
+                  <li class="flex items-center gap-3 md:gap-4">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-medium font-montserrat text-gray-300">Dedicated Email Infrastructure</span>
+                  </li>
+                  <li class="flex items-center gap-3 md:gap-4">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-medium font-montserrat text-gray-300">Hyper-Targeted Lead Lists</span>
+                  </li>
+                  <li class="flex items-center gap-3 md:gap-4">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-medium font-montserrat text-gray-300">Personalized Sequences</span>
+                  </li>
+                  <li class="flex items-center gap-3 md:gap-4">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-medium font-montserrat text-gray-300">Response &amp; Follow Up Management</span>
+                  </li>
+                </ul>
+                <ul class="space-y-4 md:space-y-6">
+                  <li class="flex gap-3 md:gap-4 items-center">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-medium font-montserrat text-gray-300">A/B Tested Copywriting</span>
+                  </li>
+                  <li class="flex gap-3 md:gap-4 items-center">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-medium font-montserrat text-gray-300">Calendar Integration</span>
+                  </li>
+                  <li class="flex items-center gap-3 md:gap-4">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-medium font-montserrat text-gray-300">Campaign Performance Dashboard</span>
+                  </li>
+                  <li class="flex items-center gap-3 md:gap-4">
+                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 border border-rose-500/10 bg-rose-900/20 text-rose-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-3.5 h-3.5 md:w-5 md:h-5"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <span class="md:text-lg text-sm font-bold font-montserrat border-rose-500/40 border-b-2 text-white">Pay Per Call</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col items-center w-full">
+                <a href="#book-call" class="md:w-auto md:text-lg md:px-12 md:py-5 transition-all duration-300 flex items-center justify-center gap-3 group hover:bg-rose-600 hover:text-white shadow-black/50 text-base font-medium text-black font-montserrat bg-white w-full rounded-full pt-4 pr-8 pb-4 pl-8 shadow-xl">
+                  Secure Your Growth Partner
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+                <p class="md:mt-6 md:text-sm text-xs text-gray-500 font-montserrat mt-4">No retainers. Pay only for results.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="md:py-10 md:mb-24 md:px-6 max-w-3xl mr-auto mb-16 ml-auto pt-8 pr-2 pb-8 pl-2">
+        <h2 class="text-2xl md:text-3xl text-center mb-10 md:mb-12 tracking-tight font-serif font-medium text-white">FAQs — Everything you need to know.</h2>
+        <div class="space-y-4">
+          <details class="group overflow-hidden transition-all duration-300 open:shadow-md bg-[#0a0a0a] border-white/5 border rounded-2xl">
+            <summary class="flex md:p-6 cursor-pointer select-none md:text-base text-sm font-medium text-white font-montserrat pt-5 pr-5 pb-5 pl-5 items-center justify-between">
+              How fast can we expect results?
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down transition-transform group-open:rotate-180" style="color: rgb(107, 114, 128);"><path d="m6 9 6 6 6-6"></path></svg>
+            </summary>
+            <div class="px-5 md:px-6 pb-6 text-sm leading-relaxed font-light border-t pt-4 text-gray-400 border-white/5">Most clients see initial lead flow within 14 days of launch. Full optimization usually occurs by month 2, scaling aggressively in month 3.</div>
+          </details>
+          <details class="group border rounded-2xl overflow-hidden transition-all duration-300 open:shadow-md bg-[#0a0a0a] border-white/5">
+            <summary class="flex md:p-6 cursor-pointer select-none md:text-base text-sm font-medium text-white font-montserrat pt-5 pr-5 pb-5 pl-5 items-center justify-between">
+              Do you work with any industry?
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down transition-transform group-open:rotate-180" style="color: rgb(107, 114, 128);"><path d="m6 9 6 6 6-6"></path></svg>
+            </summary>
+            <div class="px-5 md:px-6 pb-6 text-sm leading-relaxed font-light border-t pt-4 text-gray-400 border-white/5">We specialize in B2B SaaS and service based businesses. This allows us to maintain our high success rate and delivery guarantees.</div>
+          </details>
+          <details class="group border rounded-2xl overflow-hidden transition-all duration-300 open:shadow-md bg-[#0a0a0a] border-white/5">
+            <summary class="flex md:p-6 cursor-pointer select-none md:text-base text-sm font-medium text-white font-montserrat pt-5 pr-5 pb-5 pl-5 items-center justify-between">
+              What is the guarantee exactly?
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down transition-transform group-open:rotate-180" style="color: rgb(107, 114, 128);"><path d="m6 9 6 6 6-6"></path></svg>
+            </summary>
+            <div class="px-5 md:px-6 pb-6 text-sm leading-relaxed font-light border-t pt-4 text-gray-400 border-white/5">No retainers. We book calls on your calendar and you only pay when they show up.</div>
+          </details>
+          <details class="group border rounded-2xl overflow-hidden transition-all duration-300 open:shadow-md bg-[#0a0a0a] border-white/5">
+            <summary class="flex md:p-6 cursor-pointer select-none md:text-base text-sm font-medium text-white font-montserrat pt-5 pr-5 pb-5 pl-5 items-center justify-between">
+              How much of my time is required?
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down transition-transform group-open:rotate-180" style="color: rgb(107, 114, 128);"><path d="m6 9 6 6 6-6"></path></svg>
+            </summary>
+            <div class="px-5 md:px-6 pb-6 text-sm leading-relaxed font-light border-t pt-4 text-gray-400 border-white/5">Very little. We need about 2-3 hours for onboarding. After that, you just show up to calls and close deals.</div>
+          </details>
+        </div>
+        <p class="text-center text-sm mt-8 text-gray-500">
+          Don't see what you're looking for?
+          <a href="#" class="underline transition-all text-rose-400 decoration-rose-900 hover:decoration-rose-400">Get in touch</a>.
+        </p>
+      </section>
+
+      <!-- Book a Call Section -->
+      <section class="md:py-24 md:px-6 max-w-7xl mr-auto ml-auto pt-16 pr-4 pb-16 pl-4" id="book-call">
+        <div class="text-center mb-10 md:mb-16">
+          <h2 class="text-3xl md:text-5xl font-serif font-medium mb-6 tracking-tight text-white">Book a Call</h2>
+          <p class="md:text-lg text-base font-light max-w-2xl mr-auto ml-auto text-gray-400">Book a no-commitment discovery call to discuss how we can help you grow.</p>
+        </div>
+        <div class="w-full bg-[#0a0a0a] rounded-[2rem] border shadow-sm overflow-hidden border-white/5">
+          <div style="width:100%;min-height:700px;overflow:auto" id="my-cal-inline-15min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "15min", {origin:"https://app.cal.com"});
+            Cal.ns["15min"]("inline", {
+              elementOrSelector:"#my-cal-inline-15min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+              calLink: "sidsv/15min",
+            });
+            Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t pt-12 md:pt-16 pb-8 md:pb-10 px-4 md:px-6 bg-[#050505] border-white/5">
+      <div class="flex flex-col md:flex-row md:items-start md:gap-10 max-w-7xl mr-auto ml-auto gap-x-8 gap-y-8 items-center justify-between">
+        <div class="text-center md:text-left">
+          <a href="#" class="text-2xl font-medium italic text-white tracking-tight font-serif">SV Growth Labs.</a>
+          <p class="md:mx-0 text-xs font-light text-gray-500 max-w-xs mt-3 mr-auto ml-auto">We fill your pipeline. You pay per call.</p>
+        </div>
+        <div class="flex flex-col gap-3 text-center md:text-right">
+          <a href="#" class="transition-colors text-sm font-medium hover:text-rose-400 text-gray-400">Services</a>
+          <a href="#" class="transition-colors text-sm font-medium hover:text-rose-400 text-gray-400">About</a>
+          <a href="#" class="text-sm transition-colors font-medium text-gray-400 hover:text-rose-400">Contact</a>
+        </div>
+      </div>
+      <div class="md:mt-16 text-[10px] md:text-xs font-montserrat text-center max-w-7xl border-t mt-12 mr-auto ml-auto pt-8 text-gray-600 border-white/5">
+        <p>© 2026 SV Growth Labs. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
